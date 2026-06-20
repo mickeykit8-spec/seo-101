@@ -1,17 +1,39 @@
+import { useState, useEffect } from "react";
 import { useSearchParams, Link, useNavigate } from "react-router-dom";
-import { ArrowLeft, Calendar, Clock, Share2, Facebook, MessageSquare, BookOpen } from "lucide-react";
-import { BLOG_POSTS } from "../data/blogPosts";
+import { ArrowLeft, Calendar, Clock, Share2, Facebook, MessageSquare, BookOpen, Loader2 } from "lucide-react";
+import { BLOG_POSTS, BlogPost as BlogPostType } from "../data/blogPosts";
+import { fetchStoryblokPosts } from "../utils/storyblok";
 
 export default function BlogPost() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const postId = searchParams.get("id");
 
+  const [posts, setPosts] = useState<BlogPostType[]>(BLOG_POSTS);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    let active = true;
+    async function loadPosts() {
+      setIsLoading(true);
+      const data = await fetchStoryblokPosts();
+      if (active) {
+        setPosts(data);
+        setIsLoading(false);
+      }
+    }
+    loadPosts();
+    return () => {
+      active = false;
+    };
+  }, []);
+
   // Retrieve matching article or fall back to the first post
-  const activePost = BLOG_POSTS.find((p) => p.id === postId) || BLOG_POSTS[0];
+  const activePost = posts.find((p) => p.id === postId) || posts[0];
 
   // Pick other posts as recommendations
-  const recommendedPosts = BLOG_POSTS.filter((p) => p.id !== activePost.id).slice(0, 3);
+  const recommendedPosts = posts.filter((p) => p.id !== activePost.id).slice(0, 3);
+
 
   // Turn string paragraphs with mock markdown headers into HTML paragraphs
   const renderFormattedContent = (contentString: string) => {
@@ -100,6 +122,17 @@ export default function BlogPost() {
           <ArrowLeft className="w-4 h-4" />
           <span>ย้อนกลับไปคลังบทความ</span>
         </Link>
+
+        {isLoading ? (
+          <div className="flex flex-col items-center justify-center py-24 bg-white/70 backdrop-blur-md rounded-3xl border border-slate-200/60 mt-8 shadow-sm space-y-4">
+            <Loader2 className="w-7 h-7 text-emerald-500 animate-spin" />
+            <p className="text-slate-700 text-sm font-black text-center px-4">
+              กำลังเชื่อมต่อและโหลดข้อมูลบทความคลังหลักแบบเรียลไทม์...
+            </p>
+            <p className="text-slate-400 text-[10px] font-bold tracking-wider uppercase">Storyblok CDN API Sync</p>
+          </div>
+        ) : (
+          <>
 
         {/* Tags / Meta */}
         <div className="space-y-4 font-sans">
@@ -221,6 +254,9 @@ export default function BlogPost() {
           </div>
 
         </div>
+
+          </>
+        )}
 
       </div>
 
