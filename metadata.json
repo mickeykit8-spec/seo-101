@@ -1,0 +1,6 @@
+{
+  "name": "SEO 101",
+  "description": "An interactive learning platform and gamified arcade for mastering SEO, Google My Business, AI Overviews, GEO, and Google Core Updates.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Sarabun:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-pixel: "Press Start 2P", "Courier New", monospace;
+  --font-sans: "Sarabun", ui-sans-serif, system-ui, sans-serif;
+  
+  /* Neon colors for tool elements */
+  --color-neon-cyan: #00eeff;
+  --color-neon-green: #00ff88;
+  --color-neon-purple: #a855f7;
+}
+
+/* Background Grid Patterns for Geometric Precision */
+.geom-grid-light {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(26, 28, 30, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(26, 28, 30, 0.04) 1px, transparent 1px);
+  background-color: #fbfcfa;
+}
+
+.geom-grid-dark {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 238, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 238, 255, 0.03) 1px, transparent 1px);
+  background-color: #080c1a;
+}
+
+/* Geometric Cards (Solid fillings, flat borders, 3D offset shadows) */
+.geom-card {
+  background-color: #ffffff;
+  border: 2px solid #1a1c1e;
+  box-shadow: 4px 4px 0px 0px #1a1c1e;
+  border-radius: 4px;
+}
+
+.geom-card-interactive {
+  background-color: #ffffff;
+  border: 2px solid #1a1c1e;
+  box-shadow: 4px 4px 0px 0px #1a1c1e;
+  border-radius: 4px;
+  transition: all 0.15s ease-in-out;
+}
+
+.geom-card-interactive:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #1a1c1e;
+}
+
+.geom-card-interactive:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px 0px #1a1c1e;
+}
+
+/* Dark theme Geometric Cards */
+.geom-card-dark {
+  background-color: #0d1222;
+  border: 2px solid #00eeff;
+  box-shadow: 4px 4px 0px 0px rgba(0, 238, 255, 0.4);
+  border-radius: 4px;
+}
+
+.geom-card-dark-interactive {
+  background-color: #0d1222;
+  border: 2px solid #00eeff;
+  box-shadow: 4px 4px 0px 0px rgba(0, 238, 255, 0.3);
+  border-radius: 4px;
+  transition: all 0.15s ease-in-out;
+}
+
+.geom-card-dark-interactive:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px rgba(0, 238, 255, 0.5);
+  border-color: #00ff88;
+}
+
+.geom-card-dark-interactive:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px 0px rgba(0, 238, 255, 0.2);
+}
+
+/* Geometric Dot Accent Deco */
+.geom-dots {
+  background-image: radial-gradient(rgba(26, 28, 30, 0.2) 1.5px, transparent 1.5px);
+  background-size: 12px 12px;
+}
+
+.geom-dots-dark {
+  background-image: radial-gradient(rgba(0, 238, 255, 0.15) 1.5px, transparent 1.5px);
+  background-size: 12px 12px;
+}
+
+/* Custom background presets for dark elements */
+.neon-glow-cyan {
+  box-shadow: 0 0 15px rgba(0, 238, 255, 0.25);
+  border: 1px solid rgba(0, 238, 255, 0.4);
+}
+
+.neon-glow-green {
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.25);
+  border: 1px solid rgba(0, 255, 136, 0.4);
+}
+
+.neon-glow-purple {
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.25);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+}
+
+/* Custom animation for CRT static or space dust */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; filter: drop-shadow(0 0 8px var(--color-neon-green)); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
