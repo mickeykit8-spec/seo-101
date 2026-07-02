@@ -11,6 +11,19 @@ export interface BlogPost {
   readTime: string;
   date: string;
   coverImage: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  metaKeywords?: string | string[];
+  canonicalUrl?: string;
+  schemaJsonLd?: string | Record<string, unknown> | Record<string, unknown>[];
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
+  ogType?: string;
+  authorProfileUrl?: string;
+  authorBio?: string;
+  contentTags?: string | string[];
 }
 
 export const BLOG_POSTS: BlogPost[] = [
