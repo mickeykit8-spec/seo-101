@@ -1,4 +1,5 @@
 import express from "express";
+import fs from "fs";
 import path from "path";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
@@ -7,9 +8,112 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = Number(process.env.PORT || 3000);
 
 app.use(express.json());
+
+interface SeoManifestRoute {
+  path: string;
+  title: string;
+  description: string;
+  canonicalUrl: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  ogType?: string;
+  tags?: string[];
+}
+
+interface SeoManifest {
+  siteName: string;
+  siteUrl: string;
+  defaultOgImage?: string;
+  routes: SeoManifestRoute[];
+}
+
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function loadSeoManifest(distPath: string): SeoManifest | null {
+  const candidates = [
+    path.join(distPath, "seo-manifest.json"),
+    path.join(process.cwd(), "public", "seo-manifest.json"),
+  ];
+
+  for (const candidate of candidates) {
+    try {
+      if (fs.existsSync(candidate)) {
+        return JSON.parse(fs.readFileSync(candidate, "utf8")) as SeoManifest;
+      }
+    } catch (error) {
+      console.warn("Failed to read SEO manifest:", error);
+    }
+  }
+
+  return null;
+}
+
+function matchSeoRoute(manifest: SeoManifest | null, requestPath: string): SeoManifestRoute | null {
+  if (!manifest) return null;
+  const normalizedPath = requestPath === "" ? "/" : requestPath;
+  const direct = manifest.routes.find((route) => route.path === normalizedPath);
+  if (direct) return direct;
+  if (normalizedPath.startsWith("/BlogPost/")) {
+    return manifest.routes.find((route) => route.path === "/BlogPost") || null;
+  }
+  return null;
+}
+
+function injectSeoHead(html: string, route: SeoManifestRoute | null, manifest: SeoManifest | null) {
+  if (!route || !manifest) return html;
+
+  const gscVerification = process.env.VITE_GSC_VERIFICATION || "";
+  const bingVerification = process.env.VITE_BING_VERIFICATION || "";
+  const keywords = (route.tags || []).join(", ");
+  const title = escapeHtml(route.title);
+  const description = escapeHtml(route.description);
+  const canonicalUrl = escapeHtml(route.canonicalUrl);
+  const ogTitle = escapeHtml(route.ogTitle || route.title);
+  const ogDescription = escapeHtml(route.ogDescription || route.description);
+  const ogImage = escapeHtml(route.ogImage || manifest.defaultOgImage || "");
+  const ogType = escapeHtml(route.ogType || "website");
+  const siteName = escapeHtml(manifest.siteName || "SEO Academy");
+  const verificationTags = [
+    gscVerification ? `<meta name="google-site-verification" content="${escapeHtml(gscVerification)}" />` : "",
+    bingVerification ? `<meta name="msvalidate.01" content="${escapeHtml(bingVerification)}" />` : "",
+  ].filter(Boolean).join("\n    ");
+
+  const managedHead = `
+    <meta name="description" content="${description}" />
+    ${keywords ? `<meta name="keywords" content="${escapeHtml(keywords)}" />` : ""}
+    ${verificationTags}
+    <link rel="canonical" href="${canonicalUrl}" />
+    <meta property="og:site_name" content="${siteName}" />
+    <meta property="og:type" content="${ogType}" />
+    <meta property="og:title" content="${ogTitle}" />
+    <meta property="og:description" content="${ogDescription}" />
+    <meta property="og:url" content="${canonicalUrl}" />
+    ${ogImage ? `<meta property="og:image" content="${ogImage}" />` : ""}
+    <meta name="twitter:card" content="${ogImage ? "summary_large_image" : "summary"}" />
+    <meta name="twitter:title" content="${ogTitle}" />
+    <meta name="twitter:description" content="${ogDescription}" />
+    ${ogImage ? `<meta name="twitter:image" content="${ogImage}" />` : ""}
+  `;
+
+  return html
+    .replace(/<title>[\s\S]*?<\/title>/i, `<title>${title}</title>`)
+    .replace(/<meta\s+name=["']description["'][^>]*>\s*/i, "")
+    .replace(/<meta\s+property=["']og:[^>]*>\s*/gi, "")
+    .replace(/<meta\s+name=["']twitter:[^>]*>\s*/gi, "")
+    .replace(/<link\s+rel=["']canonical["'][^>]*>\s*/gi, "")
+    .replace("</head>", `${managedHead}\n  </head>`);
+}
 
 // Initialize Gemini safely
 let ai: GoogleGenAI | null = null;
@@ -230,10 +334,19 @@ const startServer = async () => {
     app.use(vite.middlewares);
   } else {
     const distPath = path.join(process.cwd(), "dist");
+    const indexPath = path.join(distPath, "index.html");
+    const seoManifest = loadSeoManifest(distPath);
     app.use(express.static(distPath));
     // Support SPA fallback for all router requests
     app.get("*", (req, res) => {
-      res.sendFile(path.join(distPath, "index.html"));
+      try {
+        const html = fs.readFileSync(indexPath, "utf8");
+        const route = matchSeoRoute(seoManifest, req.path);
+        res.type("html").send(injectSeoHead(html, route, seoManifest));
+      } catch (error) {
+        console.error("Failed to serve SEO-injected SPA fallback:", error);
+        res.sendFile(indexPath);
+      }
     });
   }
 
