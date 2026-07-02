@@ -1,0 +1,24 @@
+# SEO Academy
+
+SEO Academy is a Thai SEO learning and tools site for business owners, marketers, developers, and teams that need practical search growth skills.
+
+Core URLs:
+- SEO Academy | Thai SEO Learning and Tools: https://seo-academy.example.com
+- SEO Articles | SEO Academy: https://seo-academy.example.com/Blog
+- SEO Article Detail | SEO Academy: https://seo-academy.example.com/BlogPost
+- SEO Games | SEO Academy: https://seo-academy.example.com/Games
+- AI SEO Tools | SEO Academy: https://seo-academy.example.com/SEOTools
+- Google Business Profile and Local SEO Tools | SEO Academy: https://seo-academy.example.com/GmbTools
+- Classic SEO Fundamentals | SEO Academy: https://seo-academy.example.com/ClassicSEO
+- AI Overviews SEO | SEO Academy: https://seo-academy.example.com/AIOverviews
+- Generative Engine Optimization | SEO Academy: https://seo-academy.example.com/GenerativeEngine
+- Google Core Updates Guide | SEO Academy: https://seo-academy.example.com/CoreUpdates
+- PageSpeed and Core Web Vitals | SEO Academy: https://seo-academy.example.com/PageSpeed
+
+Content focus:
+- SEO fundamentals and practical implementation
+- Blog articles and educational resources
+- AI-assisted SEO analysis tools
+- Google Business Profile and Local SEO
+- AI Overviews, GEO, and future search behavior
+- Core Web Vitals and PageSpeed improvement
