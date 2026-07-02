@@ -1,0 +1,194 @@
+{
+  "siteName": "SEO Academy",
+  "siteUrl": "https://seo-academy.example.com",
+  "defaultOgImage": "https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=1200",
+  "routes": [
+    {
+      "path": "/",
+      "storyblokSlug": "home",
+      "title": "SEO Academy | Thai SEO Learning and Tools",
+      "description": "Thai SEO learning platform with SEO articles, games, AI tools, GMB tools, PageSpeed guidance, and AI search optimization resources.",
+      "changefreq": "weekly",
+      "priority": "1.0",
+      "tags": [
+        "SEO",
+        "SEO tools",
+        "AI SEO"
+      ],
+      "canonicalUrl": "https://seo-academy.example.com",
+      "ogTitle": "SEO Academy | Thai SEO Learning and Tools",
+      "ogDescription": "Thai SEO learning platform with SEO articles, games, AI tools, GMB tools, PageSpeed guidance, and AI search optimization resources.",
+      "ogImage": "https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=1200",
+      "ogType": "website"
+    },
+    {
+      "path": "/Blog",
+      "storyblokSlug": "blog",
+      "title": "SEO Articles | SEO Academy",
+      "description": "Read SEO, Technical SEO, Local SEO, AI SEO, and traffic growth articles for Thai websites.",
+      "changefreq": "weekly",
+      "priority": "0.9",
+      "tags": [
+        "SEO blog",
+        "content strategy"
+      ],
+      "canonicalUrl": "https://seo-academy.example.com/Blog",
+      "ogTitle": "SEO Articles | SEO Academy",
+      "ogDescription": "Read SEO, Technical SEO, Local SEO, AI SEO, and traffic growth articles for Thai websites.",
+      "ogImage": "https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=1200",
+      "ogType": "website"
+    },
+    {
+      "path": "/BlogPost",
+      "storyblokSlug": "blog-post",
+      "title": "SEO Article Detail | SEO Academy",
+      "description": "Detailed SEO articles from SEO Academy with practical guidance for Thai businesses and websites.",
+      "changefreq": "weekly",
+      "priority": "0.7",
+      "tags": [
+        "SEO article"
+      ],
+      "canonicalUrl": "https://seo-academy.example.com/BlogPost",
+      "ogTitle": "SEO Article Detail | SEO Academy",
+      "ogDescription": "Detailed SEO articles from SEO Academy with practical guidance for Thai businesses and websites.",
+      "ogImage": "https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=1200",
+      "ogType": "article"
+    },
+    {
+      "path": "/Games",
+      "storyblokSlug": "games",
+      "title": "SEO Games | SEO Academy",
+      "description": "Practice SEO skills through interactive games and quizzes covering Googlebot, meta tags, keywords, and Technical SEO.",
+      "changefreq": "monthly",
+      "priority": "0.8",
+      "tags": [
+        "SEO games",
+        "learning"
+      ],
+      "canonicalUrl": "https://seo-academy.example.com/Games",
+      "ogTitle": "SEO Games | SEO Academy",
+      "ogDescription": "Practice SEO skills through interactive games and quizzes covering Googlebot, meta tags, keywords, and Technical SEO.",
+      "ogImage": "https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=1200",
+      "ogType": "website"
+    },
+    {
+      "path": "/SEOTools",
+      "storyblokSlug": "seo-tools",
+      "title": "AI SEO Tools | SEO Academy",
+      "description": "Use AI-assisted tools to review SEO, meta tags, keywords, technical issues, and improvement plans.",
+      "changefreq": "weekly",
+      "priority": "0.9",
+      "tags": [
+        "SEO tools",
+        "AI"
+      ],
+      "canonicalUrl": "https://seo-academy.example.com/SEOTools",
+      "ogTitle": "AI SEO Tools | SEO Academy",
+      "ogDescription": "Use AI-assisted tools to review SEO, meta tags, keywords, technical issues, and improvement plans.",
+      "ogImage": "https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=1200",
+      "ogType": "website"
+    },
+    {
+      "path": "/GmbTools",
+      "storyblokSlug": "gmb-tools",
+      "title": "Google Business Profile and Local SEO Tools | SEO Academy",
+      "description": "Tools and guidance for improving Google Business Profile, Google Maps visibility, and Local SEO.",
+      "changefreq": "weekly",
+      "priority": "0.8",
+      "tags": [
+        "Local SEO",
+        "GMB"
+      ],
+      "canonicalUrl": "https://seo-academy.example.com/GmbTools",
+      "ogTitle": "Google Business Profile and Local SEO Tools | SEO Academy",
+      "ogDescription": "Tools and guidance for improving Google Business Profile, Google Maps visibility, and Local SEO.",
+      "ogImage": "https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=1200",
+      "ogType": "website"
+    },
+    {
+      "path": "/ClassicSEO",
+      "storyblokSlug": "classic-seo",
+      "title": "Classic SEO Fundamentals | SEO Academy",
+      "description": "Learn SEO fundamentals including keyword research, on-page SEO, backlinks, technical SEO, and measurement.",
+      "changefreq": "monthly",
+      "priority": "0.8",
+      "tags": [
+        "Classic SEO",
+        "fundamentals"
+      ],
+      "canonicalUrl": "https://seo-academy.example.com/ClassicSEO",
+      "ogTitle": "Classic SEO Fundamentals | SEO Academy",
+      "ogDescription": "Learn SEO fundamentals including keyword research, on-page SEO, backlinks, technical SEO, and measurement.",
+      "ogImage": "https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=1200",
+      "ogType": "website"
+    },
+    {
+      "path": "/AIOverviews",
+      "storyblokSlug": "ai-overviews",
+      "title": "AI Overviews SEO | SEO Academy",
+      "description": "Understand AI Overviews and how to prepare content for AI-generated search summaries.",
+      "changefreq": "monthly",
+      "priority": "0.8",
+      "tags": [
+        "AI Overviews",
+        "AI SEO"
+      ],
+      "canonicalUrl": "https://seo-academy.example.com/AIOverviews",
+      "ogTitle": "AI Overviews SEO | SEO Academy",
+      "ogDescription": "Understand AI Overviews and how to prepare content for AI-generated search summaries.",
+      "ogImage": "https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=1200",
+      "ogType": "website"
+    },
+    {
+      "path": "/GenerativeEngine",
+      "storyblokSlug": "generative-engine",
+      "title": "Generative Engine Optimization | SEO Academy",
+      "description": "Learn GEO and content design for citations in generative AI, ChatGPT Search, and AI search engines.",
+      "changefreq": "monthly",
+      "priority": "0.8",
+      "tags": [
+        "GEO",
+        "Generative AI"
+      ],
+      "canonicalUrl": "https://seo-academy.example.com/GenerativeEngine",
+      "ogTitle": "Generative Engine Optimization | SEO Academy",
+      "ogDescription": "Learn GEO and content design for citations in generative AI, ChatGPT Search, and AI search engines.",
+      "ogImage": "https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=1200",
+      "ogType": "website"
+    },
+    {
+      "path": "/CoreUpdates",
+      "storyblokSlug": "core-updates",
+      "title": "Google Core Updates Guide | SEO Academy",
+      "description": "Track and respond to Google Core Updates with impact analysis, content quality improvement, and ranking risk reduction.",
+      "changefreq": "monthly",
+      "priority": "0.8",
+      "tags": [
+        "Core Updates",
+        "Google algorithm"
+      ],
+      "canonicalUrl": "https://seo-academy.example.com/CoreUpdates",
+      "ogTitle": "Google Core Updates Guide | SEO Academy",
+      "ogDescription": "Track and respond to Google Core Updates with impact analysis, content quality improvement, and ranking risk reduction.",
+      "ogImage": "https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=1200",
+      "ogType": "website"
+    },
+    {
+      "path": "/PageSpeed",
+      "storyblokSlug": "page-speed",
+      "title": "PageSpeed and Core Web Vitals | SEO Academy",
+      "description": "Check and learn website speed improvements for Core Web Vitals, LCP, INP, CLS, user experience, and SEO.",
+      "changefreq": "monthly",
+      "priority": "0.8",
+      "tags": [
+        "PageSpeed",
+        "Core Web Vitals"
+      ],
+      "canonicalUrl": "https://seo-academy.example.com/PageSpeed",
+      "ogTitle": "PageSpeed and Core Web Vitals | SEO Academy",
+      "ogDescription": "Check and learn website speed improvements for Core Web Vitals, LCP, INP, CLS, user experience, and SEO.",
+      "ogImage": "https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=1200",
+      "ogType": "website"
+    }
+  ]
+}
