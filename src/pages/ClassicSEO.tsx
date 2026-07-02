@@ -73,12 +73,11 @@ export default function ClassicSEO() {
           <div className="bg-emerald-50/50 border border-emerald-100 rounded-3xl p-6 sm:p-8 space-y-4">
             <div className="flex items-center space-x-2 text-emerald-800">
               <Flame className="w-5 h-5" />
-              <h3 className="font-bold text-base text-emerald-950">💡 คำแนะนำในการบันทึกและปรับปรุงสูตร (Editable Guides):</h3>
+              <h3 className="font-bold text-base text-emerald-950">💡 แนวทางอัปเดตสูตร Classic SEO</h3>
             </div>
             <p className="text-emerald-900/80 text-xs sm:text-sm leading-relaxed">
-              หน้านี้จัดโครงสร้างไว้เพื่อเป็นหมวดแลนดิ้งเพจส่วนบุคคลของคุณโดยเฉพาะ หากในอนาคต Google ปรับเพิ่ม-ลดอัลกอริทึม On-Page Core 
-              หรือเพิ่มประเด็นสัดส่วน Technical สากลใดๆ คุณสามารถตรวจสอบไฟล์ <code className="bg-emerald-100 px-1 py-0.5 rounded text-emerald-800 text-xs font-mono">/src/pages/ClassicSEO.tsx</code> 
-              นี้ทางตรงและเพิ่มเติมรายละเอียด บล๊อกโค้ด หรือหัวข้อความรู้อื่นๆ ได้อย่างง่ายดายทันที!
+              หน้านี้รวบรวมหลักพื้นฐานที่ควรปรับให้ทันการเปลี่ยนแปลงของ Google อย่างต่อเนื่อง ทั้ง On-Page, Technical SEO, โครงสร้างหัวข้อ และตัวอย่างเช็กลิสต์ 
+              เพื่อให้บทเรียนยังทันสมัย อ่านง่าย และนำไปใช้งานจริงได้สำหรับผู้เรียนทุกระดับ
             </p>
           </div>
 

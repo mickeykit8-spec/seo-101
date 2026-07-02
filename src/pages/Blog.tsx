@@ -138,7 +138,7 @@ export default function Blog() {
                   บทความน่าสนใจพิเศษ ⭐
                 </span>
                 <div 
-                  onClick={() => navigate(`/BlogPost?id=${featuredPost.id}`)}
+                  onClick={() => navigate(`/BlogPost/${featuredPost.id}`)}
                   className="group cursor-pointer grid grid-cols-1 lg:grid-cols-12 gap-0 bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200"
                 >
                   <div className="lg:col-span-6 relative aspect-video lg:aspect-auto border-r-0 lg:border-r border-b lg:border-b-0 border-slate-200">
@@ -204,7 +204,7 @@ export default function Blog() {
                   {gridPosts.map((post) => (
                     <div 
                       key={post.id}
-                      onClick={() => navigate(`/BlogPost?id=${post.id}`)}
+                      onClick={() => navigate(`/BlogPost/${post.id}`)}
                       className="group cursor-pointer bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-2sm hover:shadow-md transition-all duration-250 flex flex-col justify-between"
                     >
                       <div>

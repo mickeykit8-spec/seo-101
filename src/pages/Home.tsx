@@ -166,7 +166,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-white min-h-screen text-gray-900 font-sans selection:bg-emerald-150 selection:text-emerald-900">
+    <div className="bg-white min-h-screen overflow-x-hidden text-gray-900 font-sans selection:bg-emerald-150 selection:text-emerald-900">
       
       {/* Search/Points notification alerts decoration */}
       <AnimatePresence>
@@ -191,10 +191,10 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left intro text */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center space-x-2 px-4 py-1.5 bg-emerald-50 text-emerald-600 rounded-full text-xs font-semibold shadow-sm border border-emerald-100">
+            <div className="lg:col-span-7 space-y-6 min-w-0">
+              <div className="inline-flex max-w-full items-center space-x-2 px-4 py-1.5 bg-emerald-50 text-emerald-600 rounded-full text-xs font-semibold shadow-sm border border-emerald-100">
                 <span>🌟</span>
-                <span>แพลตฟอร์มเรียน SEO อันดับ 1 ของไทย</span>
+                <span className="break-words">แพลตฟอร์มเรียน SEO อันดับ 1 ของไทย</span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-950 tracking-tight leading-tight">
@@ -206,14 +206,14 @@ export default function Home() {
                 </span>
               </h1>
               
-              <p className="text-gray-500 text-lg sm:text-lg max-w-xl leading-relaxed">
+              <p className="text-gray-500 text-lg sm:text-lg max-w-xl leading-relaxed break-words">
                 คอร์สเรียน SEO ครบวงจรภาษาไทย พร้อมเครื่องมือวิเคราะห์ด้วย AI เกมฝึกทักษะ และระบบเก็บคะแนนความสำเร็จแบบจัดเต็ม ออกแบบมาเพื่อให้คุณเห็นผลลัพธ์จริงตั้งแต่สัปดาห์แรก
               </p>
 
               <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-2">
                 <button
                   onClick={() => navigate("/SEOTools")}
-                  className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-full shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center space-x-2 cursor-pointer"
+                  className="w-full sm:w-auto px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-full shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center space-x-2 cursor-pointer"
                 >
                   <span>เริ่มเรียนเลย</span>
                   <ArrowRight className="w-4 h-4" />
@@ -221,7 +221,7 @@ export default function Home() {
 
                 <button
                   onClick={() => navigate("/Games")}
-                  className="px-6 py-3.5 bg-white hover:bg-gray-50 text-gray-750 border border-gray-200 font-semibold rounded-full shadow-sm hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center space-x-2 cursor-pointer"
+                  className="w-full sm:w-auto px-6 py-3.5 bg-white hover:bg-gray-50 text-gray-750 border border-gray-200 font-semibold rounded-full shadow-sm hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center space-x-2 cursor-pointer"
                 >
                   <BrainCircuit className="w-4 h-4 text-emerald-500" />
                   <span>ทดลองเครื่องมือ AI ฟรี</span>
@@ -250,22 +250,22 @@ export default function Home() {
             </div>
 
             {/* Right Graphic Mockup of Dashboard (Super polished, soft shadow) */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative bg-white rounded-[24px] border border-gray-100 p-6 shadow-2xl space-y-6 max-w-md mx-auto">
+            <div className="lg:col-span-5 relative min-w-0">
+              <div className="relative w-full max-w-md min-w-0 bg-white rounded-[24px] border border-gray-100 p-4 sm:p-6 shadow-2xl space-y-6 mx-auto">
                 <div className="flex items-center justify-between border-b border-gray-50 pb-4">
                   <div className="flex items-center space-x-2">
                     <span className="w-3 h-3 bg-red-100 rounded-full border border-red-200"></span>
                     <span className="w-3 h-3 bg-yellow-100 rounded-full border border-yellow-200"></span>
                     <span className="w-3 h-3 bg-emerald-100 rounded-full border border-emerald-200"></span>
                   </div>
-                  <span className="text-xs font-medium text-gray-400">seo_dashboard_analytics.io</span>
+                  <span className="min-w-0 truncate text-xs font-medium text-gray-400">seo_dashboard_analytics.io</span>
                 </div>
                 
                 {/* Ranking growth graph & local search card layout */}
                 <div className="space-y-4">
                   <div className="p-4 bg-emerald-50/50 border border-emerald-100/60 rounded-2xl">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs text-emerald-800 font-bold tracking-wide uppercase">Organic Traffic Growth</span>
+                    <div className="flex items-center justify-between gap-3 mb-2">
+                      <span className="min-w-0 text-xs text-emerald-800 font-bold tracking-wide uppercase break-words">Organic Traffic Growth</span>
                       <TrendingUp className="w-4 h-4 text-emerald-600" />
                     </div>
                     {/* SVG Curve graph for beautiful visual */}
@@ -323,7 +323,7 @@ export default function Home() {
                 </div>
 
                 <div className="text-center pt-2">
-                  <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-4 py-2 rounded-full inline-block leading-relaxed max-w-full text-center">
+                      <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-4 py-2 rounded-full inline-block leading-relaxed max-w-full text-center break-words">
                     ✨ Get your keywords ranked in Google 1st page & your brand cited in AI Platforms (Google AI Overviews, ChatGPT, Gemini)
                   </span>
                 </div>

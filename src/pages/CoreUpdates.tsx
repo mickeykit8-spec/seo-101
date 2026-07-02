@@ -74,14 +74,11 @@ export default function CoreUpdates() {
           <div className="bg-rose-50 border border-rose-100 rounded-3xl p-6 sm:p-8 space-y-4">
             <div className="flex items-center space-x-2 text-rose-800">
               <AlertOctagon className="w-5 h-5 text-rose-600" />
-              <h3 className="font-bold text-base text-rose-950">☢️ หน้าจัดการแก้ไขข้อมูลง่ายดายด้วยเอกเทศส่วนตัว (Developer/Admin Guide)</h3>
+              <h3 className="font-bold text-base text-rose-950">☢️ แผนรับมือ Google Core Updates</h3>
             </div>
             <p className="text-rose-900/85 text-xs sm:text-sm leading-relaxed">
-              กูเกิลมักจะออกคู่มืออัปเดตและข้อกำหนดความพึงพอใจการกวาดล้างสแปมใหม่ๆ ประจำไตรมาสเสมอ 
-              เพื่อให้คุณไม่เสียโอกาสเมื่อโมเดลรอบถัดไปเปิดตัว คุณสามารถเข้ามาเขียนอัปเดตกติกา คัดลอกลิงก์กฎระเบียบ 
-              หรือแนวทางรอดตัวเฉพาะในเพจ 
-              <code className="bg-rose-100/60 px-1.5 py-0.5 rounded text-rose-950 text-xs font-mono">/src/pages/CoreUpdates.tsx</code> 
-              นี้ได้ทันใจตามสบายได้ทันที!
+              Google มักออกคำแนะนำและระบบประเมินคุณภาพใหม่เป็นระยะ เนื้อหาหน้านี้จึงควรเน้นหลัก E-E-A-T, ความน่าเชื่อถือของผู้เขียน, คุณภาพแหล่งอ้างอิง 
+              และแนวทางลดความเสี่ยงจากเนื้อหาซ้ำหรือเนื้อหาที่ไม่เป็นประโยชน์
             </p>
           </div>
 

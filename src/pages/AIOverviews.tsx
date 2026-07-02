@@ -72,13 +72,11 @@ export default function AIOverviews() {
           <div className="bg-emerald-50/50 border border-emerald-100 rounded-3xl p-6 sm:p-8 space-y-4">
             <div className="flex items-center space-x-2 text-emerald-800">
               <Target className="w-5 h-5" />
-              <h3 className="font-bold text-base text-emerald-950">📝 สะดวกสำหรับการปรับเปลี่ยนอัปเดตของ Google (Admin Note)</h3>
+              <h3 className="font-bold text-base text-emerald-950">📝 แนวทางรับมือ AI Overviews ที่เปลี่ยนเร็ว</h3>
             </div>
             <p className="text-emerald-950/80 text-xs sm:text-sm leading-relaxed">
-              ระบบสแกนความรู้ AI หน้าแรกของ Google มักจะมีการปรับรูปแบบแท็กลิงก์, สไตล์พารากราฟ และตัวละครสนับสนุนคำตอบอยู่เสมอ 
-              คุณสามารถเข้ามาเปิดทำการแก้ไข หรือเพิ่มคลังภาพคำคมรวมถึงทฤษฎีในไฟล์นี้ 
-              <code className="bg-emerald-100 px-1.5 py-0.5 rounded text-emerald-800 text-xs font-mono">/src/pages/AIOverviews.tsx</code> 
-              เพื่อให้ได้คำแนะนำที่แปลกใหม่และทันสมัยอยู่เสมอ!
+              AI Overviews เปลี่ยนรูปแบบสรุปคำตอบและแหล่งอ้างอิงอยู่เสมอ เนื้อหาหน้านี้จึงควรอัปเดตตามพฤติกรรมการค้นหาใหม่ คำถามจริงของผู้ใช้ 
+              และแนวทางสร้างคำตอบที่ชัดเจน น่าเชื่อถือ และอ้างอิงได้
             </p>
           </div>
 

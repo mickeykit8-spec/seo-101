@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
-import { useSearchParams, Link, useNavigate } from "react-router-dom";
+import { useSearchParams, useParams, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock, Share2, Facebook, MessageSquare, BookOpen, Loader2 } from "lucide-react";
+import SEOHead from "../components/SEOHead";
 import { BLOG_POSTS, BlogPost as BlogPostType } from "../data/blogPosts";
 import { fetchStoryblokPosts } from "../utils/storyblok";
 
 export default function BlogPost() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const postId = searchParams.get("id");
+  const { id: routePostId } = useParams();
+  const postId = routePostId || searchParams.get("id");
 
   const [posts, setPosts] = useState<BlogPostType[]>(BLOG_POSTS);
   const [isLoading, setIsLoading] = useState(true);
@@ -109,6 +111,42 @@ export default function BlogPost() {
   };
 
   return (
+    <>
+    <SEOHead
+      path={`/BlogPost/${activePost.id}`}
+      seo={{
+        metaTitle: activePost.metaTitle || `${activePost.title} | SEO Academy`,
+        metaDescription: activePost.metaDescription || activePost.excerpt,
+        metaKeywords: activePost.metaKeywords || [activePost.category, activePost.categoryThai, "SEO Academy"],
+        canonicalUrl: activePost.canonicalUrl,
+        ogTitle: activePost.ogTitle || activePost.title,
+        ogDescription: activePost.ogDescription || activePost.excerpt,
+        ogImage: activePost.ogImage || activePost.coverImage,
+        ogImageAlt: activePost.ogImageAlt || activePost.title,
+        ogType: activePost.ogType || "article",
+        authorName: activePost.author,
+        authorRole: activePost.authorRole,
+        authorAvatar: activePost.authorAvatar,
+        authorProfileUrl: activePost.authorProfileUrl,
+        authorBio: activePost.authorBio,
+        contentTags: activePost.contentTags || [activePost.category, activePost.categoryThai],
+        schemaJsonLd: activePost.schemaJsonLd || {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: activePost.title,
+          description: activePost.excerpt,
+          image: activePost.coverImage,
+          author: {
+            "@type": "Person",
+            name: activePost.author,
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "SEO Academy",
+          },
+        },
+      }}
+    />
     <div className="bg-slate-50/50 min-h-screen text-slate-800 font-sans pb-20">
       
       {/* Blog Detail Header */}
@@ -236,7 +274,7 @@ export default function BlogPost() {
                 {recommendedPosts.map((p) => (
                   <div 
                     key={p.id}
-                    onClick={() => navigate(`/BlogPost?id=${p.id}`)}
+                    onClick={() => navigate(`/BlogPost/${p.id}`)}
                     className="group cursor-pointer bg-white p-4 border border-slate-200 hover:shadow-2sm rounded-2xl transition-all flex items-start space-x-3"
                   >
                     <img src={p.coverImage} alt={p.title} className="w-16 h-16 rounded-xl object-cover shrink-0" />
@@ -261,5 +299,6 @@ export default function BlogPost() {
       </div>
 
     </div>
+    </>
   );
 }

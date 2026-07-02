@@ -70,12 +70,11 @@ export default function GenerativeEngine() {
           <div className="bg-emerald-50/50 border border-emerald-100 rounded-3xl p-6 sm:p-8 space-y-4">
             <div className="flex items-center space-x-2 text-emerald-800">
               <Wifi className="w-5 h-5" />
-              <h3 className="font-bold text-base text-emerald-950">⚙️ หน้าไฟล์แลนดิ้งเฉพาะเพื่อรองรับการเปลี่ยนผ่านกลยุทธ์ (Future Proof)</h3>
+              <h3 className="font-bold text-base text-emerald-950">⚙️ กลยุทธ์ GEO ที่ปรับตามแพลตฟอร์ม AI</h3>
             </div>
             <p className="text-emerald-900/85 text-xs sm:text-sm leading-relaxed">
-              เครื่องมือและทฤษฎี GEO มีการค้นพบใหม่และปรับสัดส่วนโครงสร้างอยู่ตลอดเวลา คุณสามารถเข้ามาเปิดดูและปรับแก้ไขเนื้อหาบนเพจ 
-              <code className="bg-emerald-100 px-1.5 py-0.5 rounded text-emerald-800 text-xs font-mono">/src/pages/GenerativeEngine.tsx</code> 
-              นี้เพื่อมอบแนวทางปฏิบัติตามมาตรฐานสากลใหม่ให้ทันกระแสโลกอยู่เสมอได้อย่างคุ้มค่า!
+              เครื่องมือและทฤษฎี GEO มีการค้นพบใหม่และปรับสัดส่วนโครงสร้างอยู่ตลอดเวลา เนื้อหาหน้านี้จึงควรเชื่อมโยงกับพฤติกรรมของ ChatGPT, Gemini, Perplexity และแพลตฟอร์ม AI อื่น 
+              เพื่อให้แนวทางปฏิบัติยังทันกระแสและนำไปใช้ได้จริง
             </p>
           </div>
 
